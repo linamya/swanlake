@@ -1,0 +1,2236 @@
+/* =========================================================
+   ОСНОВА
+========================================================= */
+
+:root {
+
+    --bg: #F3EFE5;
+    --black: #000000;
+    --blue: #819CB7;
+
+    /*
+       Размеры исходного дизайна
+    */
+
+    --heading-size: 190px;
+    --body-size: 50px;
+    --accent-size: 77px;
+
+}
+
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+
+html {
+    background: var(--bg);
+    scroll-behavior: smooth;
+}
+
+
+body {
+
+    width: 100%;
+
+    min-height: 100vh;
+
+    background: var(--bg);
+
+    color: #000;
+
+    overflow-x: hidden;
+
+    -webkit-font-smoothing: antialiased;
+
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ СТРАНИЦА
+========================================================= */
+
+.mobile-site {
+
+    width: 100%;
+
+    max-width: 430px;
+
+    margin: 0 auto;
+
+    overflow: hidden;
+
+    background: var(--bg);
+
+}
+
+
+/* =========================================================
+   ШРИФТЫ
+========================================================= */
+
+.heading {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(55px,
+            12vw,
+            190px);
+
+    font-weight: 400;
+
+    line-height: .86;
+
+    color: #000;
+
+}
+
+.body-text {
+
+    font-family:
+        "Charis SIL",
+        Georgia,
+        serif;
+
+    font-size:
+        clamp(17px,
+            4.63vw,
+            50px);
+
+    font-weight: 400;
+
+    line-height: 1.25;
+
+    color: #000;
+
+}
+
+
+.signature,
+.time,
+.venue-name {
+
+    font-family:
+        "Great Vibes",
+        cursive;
+
+    font-size:
+        clamp(28px,
+            7.13vw,
+            77px);
+
+    line-height: 1;
+
+    font-weight: 400;
+
+}
+
+
+/* =========================================================
+   ОБЫЧНОЕ ПОЯВЛЕНИЕ
+========================================================= */
+
+.reveal {
+    opacity: 0;
+    transform: translateY(35px);
+
+    transition:
+        opacity 3.5s ease,
+        transform 3.5s cubic-bezier(.2, .7, .2, 1);
+}
+
+.reveal.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* =========================================================
+   HERO
+========================================================= */
+
+.hero {
+
+    position: relative;
+
+    width: 100%;
+
+    /*
+       Соотношение реального изображения
+    */
+
+    aspect-ratio: 2 / 3;
+
+    overflow: hidden;
+
+}
+
+
+.hero-image {
+
+    position: absolute;
+
+    inset: 0;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: cover;
+
+    object-position: center;
+
+}
+
+
+.hero-date {
+
+    position: absolute;
+
+    top: 6%;
+
+    left: 0;
+
+    width: 100%;
+
+    text-align: center;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(20px,
+            5vw,
+            54px);
+
+    font-style: italic;
+
+    opacity: 0;
+
+}
+.hero.hero-start .hero-date {
+    animation:
+        simpleFade .8s ease forwards;
+}
+
+
+/* =========================================================
+   WEDDING DAY
+========================================================= */
+
+.hero-title {
+
+    position: absolute;
+
+    top: 16%;
+
+    left: 0;
+
+    width: 100%;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    overflow: hidden;
+
+}
+
+
+.hero-word {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(62px,
+            17.59vw,
+            190px);
+
+    font-weight: 400;
+
+    line-height: .83;
+
+    white-space: nowrap;
+
+}
+
+
+.wedding {
+    transform: translateX(-120vw);
+}
+
+.day {
+    transform: translateX(120vw);
+}
+.hero.hero-start .wedding {
+    animation: weddingIn 2.2s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+.hero.hero-start .day {
+    animation: dayIn 2.2s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+
+@keyframes weddingIn {
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes dayIn {
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes simpleFade {
+
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+
+}
+
+
+/* =========================================================
+   ЦВЕТОЧНАЯ ПОЛОСА
+========================================================= */
+
+.flower-border {
+
+    position: relative;
+
+    width: 100%;
+
+    height: auto;
+
+    margin-top: -60px;
+
+    z-index: 5;
+
+}
+
+
+.flower-border img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   БЛОК 2
+========================================================= */
+
+.welcome {
+
+    position: relative;
+
+    width: 100%;
+
+    background: var(--bg);
+
+    text-align: center;
+
+    padding-top: 100px;
+
+}
+
+
+.welcome .heading {
+
+    margin-bottom: 75px;
+
+}
+
+
+.welcome-text {
+
+    padding:
+        0 32px;
+
+    margin-bottom: 60px;
+
+}
+
+
+.signature {
+
+    padding:
+        0 20px;
+
+    margin-bottom: 70px;
+
+}
+
+
+/* =========================================================
+   ФОТО ПАРЫ
+========================================================= */
+
+.couple-photo {
+
+    width: 80%;
+
+    margin: 0 auto;
+
+}
+
+
+.couple-photo img {
+
+    width: 100%;
+
+    height: auto;
+
+    display: block;
+
+}
+
+
+/* =========================================================
+   ЦВЕТОК
+========================================================= */
+
+.rotating-flower {
+
+    width: 100%;
+
+    height: 40px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: visible;
+
+}
+
+
+.rotating-flower img {
+
+    width: 95px;
+
+    height: 95px;
+
+    object-fit: contain;
+
+    animation:
+        flowerRotate 14s linear infinite;
+
+}
+
+
+@keyframes flowerRotate {
+
+    from {
+        transform: rotate(0deg);
+    }
+
+    to {
+        transform: rotate(360deg);
+    }
+
+}
+
+
+/* =========================================================
+   27.02 / 2027
+========================================================= */
+
+.date-title {
+    position: relative;
+    width: 100%;
+    height: 65vw;
+    overflow: hidden;
+    padding: 15vw 0 15vw;
+}
+
+
+
+/* Общие настройки текста */
+
+.date-title span {
+
+    position: absolute;
+
+    font-family: "Noto Serif Display", serif;
+
+    font-size:
+        clamp(60px,
+            17.59vw,
+            190px);
+
+    line-height: .85;
+
+    white-space: nowrap;
+
+}
+
+/* =========================================================
+   27.02
+========================================================= */
+
+.date-left {
+    top: 14vw;
+    left: -8vw;
+    width: 100%;
+    text-align: center;
+    transform: translateX(-100vw);
+}
+
+
+/* =========================================================
+   2027
+========================================================= */
+
+.date-right {
+    top: 40vw;
+    left: 8vw;
+    width: 100%;
+    text-align: center;
+    transform: translateX(100vw);
+}
+
+/* =========================================================
+   АНИМАЦИЯ
+========================================================= */
+
+.date-title.visible .date-left {
+
+    animation:
+        dateLeft 2s cubic-bezier(.2, .7, .2, 1) forwards;
+
+}
+
+
+.date-title.visible .date-right {
+
+    animation:
+        dateRight 2s cubic-bezier(.2, .7, .2, 1) forwards;
+
+}
+
+
+@keyframes dateLeft {
+
+    from {
+        transform: translateX(-100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+@keyframes dateRight {
+
+    from {
+        transform: translateX(100vw);
+    }
+
+    to {
+        transform: translateX(0);
+    }
+
+}
+
+
+/* =========================================================
+   БЛОК 3
+========================================================= */
+
+.timing {
+
+    width: 100%;
+
+    background: var(--bg);
+
+    text-align: center;
+
+}
+
+.event {
+    text-align: left;
+}
+
+
+.timing-flower {
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.timing-flower img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+.section-heading {
+
+    padding:
+        90px 15px 70px;
+
+}
+
+.timing-row {
+    text-align: left;
+}
+
+.event {
+    text-align: left !important;
+}
+
+/* =========================================================
+   ФОТО С ТАЙМИНГОМ
+========================================================= */
+
+.timing-photo {
+
+    position: relative;
+
+    width: 100%;
+
+    overflow: hidden;
+
+}
+
+
+.timing-photo>img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+.timing-content {
+    position: absolute;
+    inset: 0;
+
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+
+    gap: 45px;
+
+    padding: 58% 25px 40px;
+
+    transform: translateY(-100px);
+}
+
+
+.timing-row {
+
+    display: grid;
+
+    grid-template-columns: 40% 40%;
+
+    align-items: center;
+
+}
+
+
+.time {
+
+    text-align: right;
+
+    padding-right: 25px;
+
+}
+
+
+.event {
+
+    font-family:
+        "Charis SIL",
+        serif;
+
+    font-size:
+        clamp(17px,
+            4.63vw,
+            50px);
+
+    line-height: 1.05;
+
+    text-align: center;
+
+}
+
+
+/* =========================================================
+   БЛОК 4 — LOCATION
+========================================================= */
+
+.location {
+
+    position: relative;
+
+    width: 100%;
+
+    background: var(--bg);
+
+    text-align: center;
+
+    padding-top: 100px;
+
+}
+
+
+/* бумажная композиция */
+
+.location-paper {
+
+    position: relative;
+
+    width: 100%;
+
+    min-height: 650px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    overflow: hidden;
+
+}
+
+
+.paper-image {
+
+    position: absolute;
+
+    width: 100%;
+
+    height: 100%;
+
+    object-fit: contain;
+
+    z-index: 1;
+
+}
+
+
+/* фото места */
+
+.location-photo {
+
+    position: relative;
+
+    width: 72%;
+
+    z-index: 2;
+
+    margin-top: 25px;
+
+}
+
+
+.location-photo img {
+
+    width: 100%;
+
+    display: block;
+
+}
+
+
+.location-text {
+
+    position: absolute;
+
+    inset: 0;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    padding:
+        20px;
+
+}
+
+
+.location-heading {
+    position: absolute !important;
+
+    top: -200px !important;
+    left: 50% !important;
+
+    width: 100vw !important;
+
+    margin: 0 !important;
+    padding: 0 !important;
+
+    text-align: center !important;
+
+    transform: translateX(-50%) !important;
+
+    z-index: 5;
+}
+
+.venue-name {
+
+    margin-bottom: 18px;
+
+}
+
+
+.venue-address {
+
+    font-family:
+        "Charis SIL",
+        serif;
+
+    font-size:
+        clamp(17px,
+            4.63vw,
+            50px);
+
+    line-height: 1.15;
+
+}
+
+
+/* =========================================================
+   КНОПКА
+========================================================= */
+
+.map-button-wrap {
+
+    position: relative;
+
+    z-index: 10;
+
+    margin-top: -60px;
+
+    display: flex;
+
+    justify-content: center;
+
+}
+
+
+.map-button {
+
+    width: 74%;
+
+    aspect-ratio: 797 / 160;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #819CB7;
+
+    border: 2px solid #000;
+
+    color: #000;
+
+    text-decoration: none;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size:
+        clamp(17px,
+            5vw,
+            54px);
+
+    transition:
+        transform .25s ease;
+
+}
+
+
+.map-button:active {
+
+    transform: scale(.97);
+
+}
+
+
+/* =========================================================
+   СОВСЕМ СКОРО
+========================================================= */
+
+.soon {
+
+    font-family:
+        "Playfair Display",
+        cursive;
+
+    font-size:
+        clamp(42px,
+            9.17vw,
+            99px);
+
+    font-weight: 400;
+
+    margin:
+        120px 0 10px; 
+
+}
+
+
+/* =========================================================
+   КАЛЕНДАРЬ — ОТДЕЛЯЮЩИЕСЯ ЛИСТЫ
+========================================================= */
+
+.countdown-wrap {
+
+    width: 100%;
+
+    padding:
+        8vw 5vw 12vw;
+
+    box-sizing: border-box;
+
+}
+
+
+/* =========================================================
+   ОСНОВНОЙ КАЛЕНДАРЬ
+========================================================= */
+
+.calendar {
+
+    width: 100%;
+
+    background: #F3EFE5;
+
+    border:
+        2px solid #000;
+
+    box-sizing: border-box;
+
+    overflow: hidden;
+
+}
+
+
+/* =========================================================
+   ЗАГОЛОВОК
+========================================================= */
+
+.calendar-header {
+
+    height: 11vw;
+
+    min-height: 45px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-bottom:
+        2px solid #000;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 4vw;
+
+    letter-spacing: .04em;
+
+}
+
+
+/* =========================================================
+   ЧЕТЫРЕ ЯЧЕЙКИ
+========================================================= */
+
+.calendar-content {
+
+    display: grid;
+
+    grid-template-columns:
+        repeat(4, 1fr);
+
+}
+
+
+.calendar-item {
+
+    position: relative;
+
+    min-width: 0;
+
+    min-height: 30vw;
+
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: flex-start;
+
+    background: #F3EFE5;
+
+    border-right:
+        1px solid #000;
+
+    box-sizing: border-box;
+
+}
+
+
+.calendar-item:last-child {
+
+    border-right: none;
+
+}
+
+
+/* =========================================================
+   ОБЛАСТЬ ЛИСТА
+========================================================= */
+
+.calendar-sheet {
+
+    position: relative;
+
+    width: 100%;
+
+    height: 20vw;
+
+    min-height: 70px;
+
+    perspective: 900px;
+
+}
+
+
+/* =========================================================
+   ЛИСТ КАЛЕНДАРЯ
+========================================================= */
+
+.calendar-sheet-current,
+.calendar-sheet-next {
+
+    position: absolute;
+
+    left: 7%;
+
+    top: 8%;
+
+    width: 86%;
+
+    height: 84%;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    background: #F8F4E9;
+
+    border:
+        1px solid rgba(0, 0, 0, .18);
+
+    box-sizing: border-box;
+
+    box-shadow:
+        0 2px 5px rgba(0, 0, 0, .10);
+
+}
+
+
+/* =========================================================
+   ЛИНИЯ ОТРЫВА
+========================================================= */
+
+.calendar-sheet-current::before,
+.calendar-sheet-next::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 0;
+
+    width: 100%;
+
+    height: 1px;
+
+    border-top:
+        1px dashed rgba(0, 0, 0, .35);
+
+}
+
+
+/* =========================================================
+   НОВЫЙ ЛИСТ
+========================================================= */
+
+.calendar-sheet-next {
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   ТЕКУЩИЙ ЛИСТ
+========================================================= */
+
+.calendar-sheet-current {
+
+    z-index: 2;
+
+    transform-origin:
+        50% 0%;
+
+    backface-visibility: hidden;
+
+}
+
+
+/* =========================================================
+   ЦИФРЫ
+========================================================= */
+
+.calendar-sheet-current span,
+.calendar-sheet-next span {
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 7vw;
+
+    line-height: 1;
+
+    font-weight: 400;
+
+    color: #000;
+
+}
+
+
+/* =========================================================
+   АНИМАЦИЯ ПЕРЕЛИСТЫВАНИЯ
+========================================================= */
+
+.calendar-sheet.flipping .calendar-sheet-current {
+
+    animation:
+        calendarFlip .72s cubic-bezier(.55, .05, .45, .95) forwards;
+
+}
+
+
+@keyframes calendarFlip {
+
+    0% {
+
+        transform:
+            perspective(900px) rotateX(0deg);
+
+        opacity: 1;
+
+    }
+
+    35% {
+
+        transform:
+            perspective(900px) rotateX(-38deg);
+
+        opacity: 1;
+
+    }
+
+    70% {
+
+        transform:
+            perspective(900px) rotateX(-115deg) translateY(2vw);
+
+        opacity: .85;
+
+    }
+
+    100% {
+
+        transform:
+            perspective(900px) rotateX(-180deg) translateY(7vw);
+
+        opacity: 0;
+
+    }
+
+}
+
+
+/* =========================================================
+   ЭФФЕКТ ОТДЕЛИВШЕГОСЯ ЛИСТА
+========================================================= */
+
+.calendar-sheet.flipping::after {
+
+    content: "";
+
+    position: absolute;
+
+    z-index: 5;
+
+    left: 7%;
+
+    top: 8%;
+
+    width: 86%;
+
+    height: 84%;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(to bottom,
+            transparent 0%,
+            rgba(0, 0, 0, .04) 70%,
+            rgba(0, 0, 0, .15) 100%);
+
+    animation:
+        paperShadow .72s ease-out forwards;
+
+}
+
+
+@keyframes paperShadow {
+
+    0% {
+
+        opacity: 0;
+
+    }
+
+    45% {
+
+        opacity: .2;
+
+    }
+
+    100% {
+
+        opacity: 0;
+
+        transform:
+            translateY(7vw);
+
+    }
+
+}
+
+
+/* =========================================================
+   ПОДПИСИ
+========================================================= */
+
+.calendar-label {
+
+    margin-top: 1vw;
+
+    font-family:
+        "Charis SIL",
+        Georgia,
+        serif;
+
+    font-size: 2.5vw;
+
+    line-height: 1;
+
+    letter-spacing: .02em;
+
+}
+
+
+/* =========================================================
+   МОМЕНТ ПЕРЕЛИСТЫВАНИЯ
+========================================================= */
+
+.calendar-sheet.flipping .calendar-sheet-next {
+
+    z-index: 1;
+
+}
+
+
+/* =========================================================
+   МОБИЛЬНАЯ КОРРЕКЦИЯ
+========================================================= */
+
+@media (max-width: 600px) {
+
+    .countdown-wrap {
+
+        padding:
+            9vw 4vw 12vw;
+
+    }
+
+    .calendar-header {
+
+        font-size: 4vw;
+
+    }
+
+    .calendar-item {
+
+        min-height: 31vw;
+
+    }
+
+    .calendar-sheet {
+
+        height: 20vw;
+
+    }
+
+    .calendar-sheet-current span,
+    .calendar-sheet-next span {
+
+        font-size: 7vw;
+
+    }
+
+    .calendar-label {
+
+        font-size: 2.5vw;
+
+    }
+
+}
+
+
+/* =========================================================
+   ЕСЛИ У ПОЛЬЗОВАТЕЛЯ ОТКЛЮЧЕНЫ АНИМАЦИИ
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .calendar-sheet.flipping .calendar-sheet-current {
+
+        animation: none;
+
+    }
+
+}
+
+
+/* =========================================================
+   БЛОК 5
+========================================================= */
+
+.dress-code {
+
+    width: 100%;
+
+    background: var(--bg);
+
+    text-align: center;
+
+    padding:
+        100px 0;
+
+    overflow: hidden;
+
+}
+
+
+.dress-heading {
+
+    margin-bottom:
+        70px;
+
+}
+
+
+/* =========================================================
+   КРУГИ
+========================================================= */
+
+.color-palette {
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    width: 100%;
+
+    margin-bottom:
+        80px;
+
+}
+
+
+.color-circle {
+
+    width:
+        75px;
+
+    height:
+        75px;
+
+    border-radius: 50%;
+
+    flex-shrink: 0;
+
+    margin-left:
+        -16px;
+
+    opacity: 0;
+
+    transform:
+        translateX(-30px) scale(.8);
+
+    transition:
+        opacity 1.5s ease,
+        transform 1.5s cubic-bezier(.2, .7, .2, 1);
+
+}
+
+
+.color-circle:first-child {
+
+    margin-left: 0;
+
+}
+
+
+.circle-1 {
+    background: #819CB7;
+}
+
+.circle-2 {
+    background: #ADB0DE;
+}
+
+.circle-3 {
+    background: #000546;
+}
+
+.circle-4 {
+    background: #D9CCAE;
+}
+
+.circle-5 {
+    background: #819CB7;
+}
+
+
+.color-palette.visible .color-circle {
+
+    opacity: 1;
+
+    transform:
+        translateX(0) scale(1);
+
+}
+
+
+.color-palette.visible .circle-1 {
+
+    transition-delay:
+        0s;
+
+}
+
+
+.color-palette.visible .circle-2 {
+
+    transition-delay:
+        .25s;
+
+}
+
+
+.color-palette.visible .circle-3 {
+
+    transition-delay:
+        .5s;
+
+}
+
+
+.color-palette.visible .circle-4 {
+
+    transition-delay:
+        .75s;
+
+}
+
+
+.color-palette.visible .circle-5 {
+
+    transition-delay:
+        1s;
+
+}
+
+
+/* =========================================================
+   ФОТО DRESS CODE
+========================================================= */
+
+.dress-photo {
+
+    width: 100%;
+
+    display: block;
+
+    margin-bottom:
+        70px;
+
+}
+
+
+.dress-text {
+
+    padding:
+        0 30px;
+
+}
+
+
+.dress-text .body-text {
+
+    margin-bottom:
+        45px;
+
+}
+
+
+/* =========================================================
+   БЛОК 6
+========================================================= */
+
+.guest-form {
+
+    min-height:
+        100vh;
+
+    background:
+        var(--bg);
+
+    text-align:
+        center;
+
+padding:
+    10px 20px 100px;
+
+}
+
+
+.guest-form .heading {
+
+    margin-bottom:
+        100px;
+
+}
+
+
+/* =========================================================
+   DESKTOP — СОХРАНЯЕМ МОБИЛЬНУЮ КОМПОЗИЦИЮ
+========================================================= */
+
+@media (min-width: 600px) {
+
+    body {
+
+        background:
+            #d9d9d9;
+
+    }
+
+
+    .mobile-site {
+
+        width:
+            390px;
+
+        max-width:
+            390px;
+
+        margin:
+            0 auto;
+
+        box-shadow:
+            0 0 40px rgba(0, 0, 0, .15);
+
+    }
+
+}
+
+/* =========================================================
+   АНКЕТА ГОСТЯ
+========================================================= */
+
+.guest-form {
+    width: 100%;
+    min-height: 100vh;
+    background: var(--bg);
+    text-align: center;
+    padding: 18vw 5vw 20vw;
+    box-sizing: border-box;
+}
+
+.guest-form .heading {
+    margin-bottom: 15vw;
+}
+
+
+/* ФОРМА */
+
+.guest-form-fields {
+    width: 100%;
+    text-align: left;
+}
+
+
+/* ГРУППА */
+
+.form-group {
+    margin-bottom: 12vw;
+}
+
+
+/* ВОПРОС */
+
+.form-group label,
+.form-question {
+    display: block;
+    font-family:
+        "Charis SIL",
+        Georgia,
+        serif;
+
+    font-size: 4.6vw;
+    line-height: 1.25;
+    color: #000;
+}
+
+
+/* ПОЛЕ ИМЕНИ */
+
+.form-group input[type="text"] {
+    width: 100%;
+    height: 15vw;
+
+    margin-top: 3vw;
+
+    padding: 0 4vw;
+
+    box-sizing: border-box;
+
+    background: var(--bg);
+
+    border: 2px solid #000;
+
+    border-radius: 0;
+
+    outline: none;
+
+    font-family:
+        "Charis SIL",
+        Georgia,
+        serif;
+
+    font-size: 4.2vw;
+    color: #000;
+}
+
+.form-group input[type="text"]::placeholder {
+    color: #000;
+    opacity: .45;
+}
+
+.form-group input[type="text"]:focus {
+    border-color: #000;
+}
+
+
+/* ВАРИАНТЫ ОТВЕТА */
+
+.form-options {
+    display: flex;
+    flex-direction: column;
+    gap: 3vw;
+    margin-top: 4vw;
+}
+
+
+.option {
+    display: flex !important;
+    align-items: center;
+
+    gap: 3vw;
+
+    font-family:
+        "Charis SIL",
+        Georgia,
+        serif;
+
+    font-size: 4.6vw;
+
+    cursor: pointer;
+}
+
+
+/* КРУГЛЫЙ ПЕРЕКЛЮЧАТЕЛЬ */
+
+.option input[type="radio"] {
+    width: 5vw;
+    height: 5vw;
+
+    margin: 0;
+
+    flex-shrink: 0;
+
+    accent-color: #000;
+}
+
+/* СТАНДАРТНЫЙ RADIO */
+
+.option input[type="radio"] {
+    width: 5vw;
+    height: 5vw;
+
+    margin: 0;
+
+    accent-color: #000;
+}
+
+
+/* КНОПКА */
+
+.form-submit {
+    width: 74vw;
+    height: 14.8148vw;
+
+    min-height: 55px;
+
+    margin: 3vw auto 0;
+
+    display: flex;
+
+    justify-content: center;
+    align-items: center;
+
+    background: var(--blue);
+
+    border: 2px solid #000;
+
+    color: #000;
+
+    font-family:
+        "Playfair Display",
+        serif;
+
+    font-size: 5vw;
+
+    cursor: pointer;
+
+    transition:
+        transform .3s ease;
+}
+
+.form-submit:active {
+    transform: scale(.97);
+}
+/* =========================================================
+   ОКНО УСПЕШНОЙ ОТПРАВКИ
+========================================================= */
+
+.success-modal {
+    position: fixed;
+    inset: 0;
+    z-index: 9999;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    background: rgba(0, 0, 0, 0.35);
+
+    opacity: 0;
+    visibility: hidden;
+
+    transition:
+        opacity 0.5s ease,
+        visibility 0.5s ease;
+}
+
+.success-modal.visible {
+    opacity: 1;
+    visibility: visible;
+}
+
+.success-modal-content {
+    width: 80vw;
+    max-width: 500px;
+
+    padding: 10vw 7vw;
+
+    box-sizing: border-box;
+
+    background: var(--bg);
+    border: 2px solid #000;
+
+    text-align: center;
+
+    transform: translateY(25px) scale(0.96);
+
+    transition:
+        transform 0.6s cubic-bezier(.16,1,.3,1);
+}
+
+.success-modal.visible .success-modal-content {
+    transform: translateY(0) scale(1);
+}
+
+.success-title {
+    font-family: "Playfair Display", serif;
+    font-size: 7vw;
+    line-height: 1;
+    margin-bottom: 5vw;
+}
+
+.success-text {
+    font-family: "Charis SIL", Georgia, serif;
+    font-size: 4.6vw;
+    line-height: 1.3;
+}
+.success-close {
+    position: absolute;
+    top: 3vw;
+    right: 3vw;
+
+    width: 9vw;
+    height: 9vw;
+
+    padding: 0;
+
+    background: transparent;
+    border: none;
+
+    font-family: Arial, sans-serif;
+    font-size: 9vw;
+    font-weight: 300;
+    line-height: 1;
+
+    color: #000;
+
+    cursor: pointer;
+}
+
+.success-modal-content {
+    position: relative;
+
+    width: 80vw;
+    max-width: 500px;
+
+    padding: 10vw 7vw;
+
+    box-sizing: border-box;
+
+    background: var(--bg);
+    border: 2px solid #000;
+
+    text-align: center;
+
+    transform: translateY(25px) scale(0.96);
+
+    transition:
+        transform 0.6s cubic-bezier(.16,1,.3,1);
+}
+/* =========================================================
+   ЗАНАВЕС ОТКРЫТИЯ
+========================================================= */
+.curtain-screen {
+    position: fixed;
+    inset: 0;
+
+    width: 100%;
+    height: 115svh;
+
+    z-index: 99999;
+
+    overflow: hidden;
+
+    background: transparent;
+
+    cursor: pointer;
+    touch-action: manipulation;
+
+    pointer-events: auto;
+}
+
+
+/* =========================================================
+   ОСНОВНАЯ ТКАНЬ
+========================================================= */
+
+.curtain {
+
+    position: absolute;
+
+    top: 0;
+    height: 110%;
+    bottom: 0;
+
+    width: 52%;
+
+    z-index: 2;
+
+    overflow: hidden;
+
+    background-color: #819CB7;
+
+    transition:
+        transform 3.2s cubic-bezier(.65,0,.15,1);
+}
+
+
+/* левая половина */
+
+.curtain-left {
+
+    left: 0;
+
+    transform-origin: left center;
+
+}
+
+
+/* правая половина */
+
+.curtain-right {
+
+    right: 0;
+
+    transform-origin: right center;
+
+}
+
+
+/* =========================================================
+   СКЛАДКИ ТКАНИ
+========================================================= */
+
+.curtain-folds {
+    position: absolute;
+    inset: 0;
+
+    width: 100%;
+    height: 100%;
+
+    background:
+        repeating-linear-gradient(
+            90deg,
+            rgba(0,0,0,.20) 0,
+            rgba(0,0,0,.20) 3vw,
+
+            rgba(255,255,255,.10) 5vw,
+            rgba(255,255,255,.10) 7vw,
+
+            rgba(0,0,0,.22) 10vw,
+            rgba(0,0,0,.22) 13vw,
+
+            rgba(255,255,255,.06) 16vw,
+            rgba(255,255,255,.06) 18vw
+        );
+
+    transform: scaleX(1.08);
+
+    transition:
+        transform 3.2s cubic-bezier(.65,0,.15,1),
+        opacity 2.6s ease;
+}
+
+
+/* =========================================================
+   ДОПОЛНИТЕЛЬНАЯ ГЛУБИНА ТКАНИ
+========================================================= */
+
+.curtain::after {
+
+    content: "";
+
+    position: absolute;
+
+    inset: 0;
+
+    pointer-events: none;
+
+    background:
+        linear-gradient(
+            90deg,
+            rgba(0,0,0,.25),
+            transparent 18%,
+            transparent 82%,
+            rgba(0,0,0,.28)
+        );
+
+}
+
+
+/* =========================================================
+   ЦЕНТРАЛЬНАЯ ТЕНЬ
+========================================================= */
+
+.curtain-center-line {
+
+    position: absolute;
+
+    top: 0;
+    bottom: 0;
+
+    left: 50%;
+
+    width: 3px;
+
+    z-index: 5;
+
+    background: rgba(0,0,0,.25);
+
+    transform: translateX(-50%);
+
+    transition:
+        opacity 1.2s ease;
+
+}
+
+
+/* =========================================================
+   ТЕКСТ "НАЖМИТЕ..."
+========================================================= */
+
+.curtain-hint {
+    position: absolute;
+    left: 50%;
+    top: 65%;
+    z-index: 10;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1vw;
+
+    width: 100%;
+    text-align: center;
+
+    color: #F3EFE5;
+    font-family: "Playfair Display", serif;
+    font-size: 5vw;
+    line-height: 1.1;
+    letter-spacing: .08em;
+
+    pointer-events: none;
+
+    transition:
+        opacity .7s ease,
+        transform 1s cubic-bezier(.2,.7,.2,1);
+}
+.wax-seal {
+    transition:
+        opacity .5s ease,
+        transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+.curtain-hint {
+    transition:
+        opacity .5s ease,
+        transform .5s cubic-bezier(.2,.7,.2,1);
+}
+
+/* =========================================================
+   АНИМАЦИЯ ОТКРЫТИЯ
+========================================================= */
+
+.curtain-screen.open .wax-seal,
+.curtain-screen.open .curtain-hint {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.75);
+}
+
+
+.curtain-screen.open .curtain-left {
+    transform:
+        translateX(-105%)
+        scaleX(.72)
+        rotateY(4deg);
+}
+
+.curtain-screen.open .curtain-right {
+    transform:
+        translateX(105%)
+        scaleX(.72)
+        rotateY(-4deg);
+}
+
+
+/* складки тоже "собираются" */
+
+.curtain-screen.open .curtain-folds {
+    transform: scaleX(.42);
+    opacity: .55;
+}
+
+
+/* центральная линия исчезает */
+
+.curtain-screen.open .curtain-center-line {
+
+    opacity: 0;
+
+}
+
+
+/* текст исчезает */
+
+.curtain-screen.open .curtain-top {
+    transform: translate(-50%, -115%);
+    opacity: 0;
+}
+
+
+/* =========================================================
+   САМ ЭКРАН ПОСЛЕ ОТКРЫТИЯ
+========================================================= */
+
+.curtain-screen.open {
+
+    animation:
+        curtainFadeOut .8s ease 2.25s forwards;
+
+}
+
+
+@keyframes curtainFadeOut {
+    from {
+        opacity: 1;
+    }
+
+    to {
+        opacity: 0;
+    }
+}
+
+
+/* =========================================================
+   ЕСЛИ ПОЛЬЗОВАТЕЛЬ НЕ ХОЧЕТ АНИМАЦИЮ
+========================================================= */
+
+@media (prefers-reduced-motion: reduce) {
+
+    .curtain,
+    .curtain-folds,
+    .curtain-hint {
+
+        transition-duration: .4s;
+
+    }
+
+}
+.wax-seal {
+    position: absolute;
+    left: 50%;
+    top: 50%;
+
+    width: 32vw;
+    height: 32vw;
+
+    max-width: 150px;
+    max-height: 150px;
+
+    z-index: 20;
+
+    transform: translate(-50%, -50%);
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    transition:
+        opacity .7s ease,
+        transform 1s cubic-bezier(.2,.7,.2,1);
+}
+
+.wax-seal img {
+    width: 100%;
+    height: 100%;
+    object-fit: contain;
+    display: block;
+}
+
+    .curtain-screen.open .wax-seal {
+    opacity: 0;
+    transform: translate(-50%, -50%) scale(.75);
+}
+.hero.hero-start .wedding {
+    animation:
+        weddingIn 2.2s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+
+.hero.hero-start .day {
+    animation:
+        dayIn 2.2s cubic-bezier(.2, .7, .2, 1) forwards;
+}
+.curtain-screen.open {
+    pointer-events: none;
+}
